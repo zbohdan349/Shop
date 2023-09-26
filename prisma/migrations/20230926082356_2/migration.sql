@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Discount" ALTER COLUMN "startDate" SET DEFAULT CURRENT_TIMESTAMP;
