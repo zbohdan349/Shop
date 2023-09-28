@@ -40,6 +40,12 @@ export class UserService {
     });
   }
 
+  findOneByEmail(email: string) {
+    return this.prisma.user.findUniqueOrThrow({
+      where: { email },
+    });
+  }
+
   update(id: string, updateUserDto: UpdateUserDto) {
     return this.prisma.user.update({
       where: { id },

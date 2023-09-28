@@ -11,9 +11,14 @@ import { ItemModule } from './item/item.module';
 import { CollectionModule } from './collection/collection.module';
 import { DiscountModule } from './discount/discount.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     PrismaModule.forRoot({
       isGlobal: true,
     }),
@@ -23,6 +28,7 @@ import { UserModule } from './user/user.module';
     CollectionModule,
     DiscountModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [
