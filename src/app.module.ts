@@ -13,6 +13,8 @@ import { DiscountModule } from './discount/discount.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { RolesGuard } from './auth/roles/roles.guard';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -39,6 +41,10 @@ import { ConfigModule } from '@nestjs/config';
       P2018: HttpStatus.NOT_FOUND,
       P2025: HttpStatus.NOT_FOUND,
     }),
+    {
+      provide: APP_GUARD,
+      useClass: RolesGuard,
+    },
     AppService,
   ],
 })
