@@ -10,10 +10,11 @@ import {
 import { ItemService } from './item.service';
 import { CreateItemDto } from './dto/create-item.dto';
 import { UpdateItemDto } from './dto/update-item.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Item')
 @Controller('item')
+@ApiBearerAuth()
 export class ItemController {
   constructor(private readonly itemService: ItemService) { }
 

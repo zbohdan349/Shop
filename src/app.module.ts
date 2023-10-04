@@ -13,8 +13,9 @@ import { DiscountModule } from './discount/discount.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
-import { RolesGuard } from './auth/roles/roles.guard';
 import { APP_GUARD } from '@nestjs/core';
+import { RolesGuard } from './roles/roles.guard';
+import { BasketModule } from './basket/basket.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { APP_GUARD } from '@nestjs/core';
     DiscountModule,
     UserModule,
     AuthModule,
+    BasketModule,
   ],
   controllers: [AppController],
   providers: [

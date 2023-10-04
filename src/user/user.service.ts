@@ -19,7 +19,7 @@ export class UserService {
     return this.prisma.user.create({
       data: {
         ...createUserDto,
-        busket: {
+        basket: {
           create: {},
         }
       },
@@ -40,7 +40,7 @@ export class UserService {
     });
   }
 
-  findOneByEmail(email: string) {
+  async findOneByEmail(email: string) {
     return this.prisma.user.findUniqueOrThrow({
       where: { email },
     });

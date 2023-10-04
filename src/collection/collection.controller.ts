@@ -9,11 +9,12 @@ import {
 } from '@nestjs/common';
 import { CollectionService } from './collection.service';
 import { CollectionDto } from './dto/collection.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { ItemsDto } from '../item/dto/items-list.dto';
 
 @ApiTags('Collection')
 @Controller('collection')
+@ApiBearerAuth()
 export class CollectionController {
   constructor(private readonly collectionService: CollectionService) { }
 

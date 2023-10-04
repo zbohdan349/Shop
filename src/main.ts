@@ -8,9 +8,6 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
 
-
-
-
   const config = new DocumentBuilder()
     .setTitle('Shop example')
     .setDescription('The shop API description')

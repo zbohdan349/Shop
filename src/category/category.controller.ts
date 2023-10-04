@@ -9,10 +9,11 @@ import {
 } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { CategoryDto } from './dto/category.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Category')
 @Controller('category')
+@ApiBearerAuth()
 export class CategoryController {
   constructor(private readonly categoryService: CategoryService) { }
 
